@@ -1,0 +1,45 @@
+temp - defaultJavaObjectsArray (default_array_of_java_objects)
+// промежуточная переменная при создании динамического массива
+
+nfile - fileToStoreNumbers (file_to_store_numbers)
+// один из 100 файлов со случайным содержимым, для тестов
+
+
+  
+prc - adultPizzaPrice (adult_pizza_price)
+// цена за взрослую порцию пиццы
+
+child - childVisitorsHowMuch (how_much_chilld_visitors)
+// количество посетителей моложе 18 лет
+
+
+
+entry - currentEntry (current_entry)
+// очередное значение в словаре, который перебирается с помощью for each
+
+filterNumber - thresholdNumber (threshold_number)
+// число, чтобы отфильтровать большие значения в массиве
+
+  
+
+pathZip - fullPathToZipFile (full_path_to_zip_file)
+// полный путь до zip-файла, лежащего на диске
+
+result - resultOfConversion (result_of_conversion)
+// результат работы функции, конвертирующей изображения
+
+
+  
+pt4 - fibonacciNumbers (fibonacci_numbers)
+// список для хранения n первых чисел Фибоначчи
+
+с - celsiusTemperature, f - fahrenheitTemperature (celsius_temperature, fahrenheit_temperature)
+// значения температуры, до и после конвертации
+
+
+  
+str - stringToProcess (string_to_process)
+// строка, в которой считаем количество гласных
+
+actionPerformed - mathOperationExecuted (math_operation_executed)
+// список для хранения операций, которые можно совершить с калькулятором
