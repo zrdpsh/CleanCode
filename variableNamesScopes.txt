@@ -192,3 +192,13 @@ private static void putCopiesToZip(String zipEntryName, ZipOutputStream zipOutpu
 
 public static Boolean deleteFilesWithFlag(String folderName)
 public static Boolean flaggedDeletion(String folderName)
+
+
+
+
+
+
+
+
+
+
