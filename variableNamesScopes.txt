@@ -2,7 +2,7 @@
 
 // initial
 public int convertDistance {
-	// code..
+	// some code..
 }
 
 // updated
@@ -143,7 +143,7 @@ public bytes[] encodeRequest(String requestBody) { return result; }
 6.3
 
 public class CalculatingPi {
-	double initialValue = 4;
+	double seedValue = 4;
 	int desiredAccuracy = 211;
 }
 
@@ -182,7 +182,7 @@ resultingListOfFolders.addAll(Arrays.asList(tmpRes[1]));
 foldersList.addAll(Arrays.asList(temporaryResult[1]));
 
 ArrayList<File> filesInTheNextLevelOfDepth = new ArrayList<>();
-ArrayList<File> filesOnNextLevel = new ArrayList<>();
+ArrayList<File> filesLevelDeeper = new ArrayList<>();
 
 ArrayList[] returnFilesAndFolderNames(String pathToRootFolder, String fileExtension, Boolean inspectDepth)
 ArrayList[] getContentsNames(String pathToRootFolder, String fileExtension, Boolean inspectDepth)
