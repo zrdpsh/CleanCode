@@ -1,0 +1,194 @@
+6.1
+
+// initial
+public int convertDistance {
+	// code..
+}
+
+// updated
+public int putToNauticalMiles {
+	float kilometers = 1.852f;
+	float commonMiles = 1.150779f; 
+
+	// some code..
+}
+
+
+// initial
+function sound(double dist) {
+      
+      	dist = dist * 3.28;
+      
+      	System.out.println("The object is " + dist + " feet away.");
+}
+
+// updated
+function distanceToLightning (double meters) {
+    
+	feet = meters * 3.28;
+      
+      	System.out.println("The object is " + feet + " feet away.");
+   }
+}
+
+
+
+//initial
+public static void printTable(int operationn) {
+	for (int i = 1; i < ITERS; i++) {
+
+	printFrame(false, ITERS);
+	printFrame(true, ITERS);
+	// some code..
+        }
+        printFrame(false, ITERS);
+}
+
+//updated
+public static void multiplicationTable(int operationn) {
+	for (int i = 1; i < HOW_MANY_CELLS; i++) {
+
+	printNumberRow(false, HOW_MANY_CELLS);
+	printNumberRow(true, HOW_MANY_CELLS);
+	// some code..
+        }
+        printNumberRow(false, HOW_MANY_CELLS);
+}
+
+
+
+//initial
+public static int max(int[] input) {
+	if (input.length > 0) return -1;
+	// some code ..
+}
+
+//updated
+public static int maximumOfNIntegers(int[] integers) {
+	if (integers.length > 0) return -1;
+	// some code ..
+}
+
+
+//initial
+public static boolean symbolChecker2(String str) {
+
+	int flg =  0;
+
+	for(int i = 0; i < str.length(); i++){
+
+		char c = str.charAt(i);
+
+		if (c == '(') flg += 1;
+		if (c == ')') flg -= 1;
+
+        }
+        return (flg == 0);
+}
+
+
+//updated
+public static boolean ParenthesisBalancer(String str) {
+
+	int isBalanced =  0;
+
+	for(int i = 0; i < str.length(); i++){
+
+		char c = str.charAt(i);
+
+		if (c == '(') flg += 1;
+		if (c == ')') flg -= 1;
+
+        }
+        return (isBalanced == 0);
+}
+
+
+
+
+6.2
+
+public int hash(String key)
+{
+    int sum = 0;
+    for (int i = 0; i < key.length(); i++){
+        sum += key.charAt(i);
+     }
+     return (sum % size);
+}
+
+
+public static int convertToBinary(int decimal) {
+	int[] binaryArray = new int[8];
+		
+
+	for (int i = 0; i < 8; i++) {
+		binaryArray[i] = decimal%2;
+		decimal = decimal/2;
+	}
+
+	return binaryArray;
+}
+
+
+int MASK = 0x0_000_00_00;
+
+
+public bytes[] encodeRequest(String requestBody) { return result; }
+
+
+
+
+
+6.3
+
+public class CalculatingPi {
+	double initialValue = 4;
+	int desiredAccuracy = 211;
+}
+
+
+public class Eggs {
+        float pricePerDozen = 3.25f;
+        float pricePerEach = 0.45f;
+}
+
+
+class Dwarf extends Creature{
+   String name;
+   String description = "A short, sturdy creature...";
+   String profession = "Craftsman";
+}
+
+class DwarfWarrior extends Dwarf {
+   // .. some code		
+   private static Weapon handWeapon = new Hammer(5, 105);
+   private static Weapon distanceWeapon = new Longbow(5, 105, 5);
+  
+   public void attack(Creature enemy, int distance, int useWeapon, int boostAttack) { return; }
+}
+
+
+
+
+
+
+6.4
+
+File[][] tmpRes = returnNamesFromGivenFolder(rootFolder, fileExtension);
+File[][] temporaryResult = getNamesFromFolder(rootFolder, fileExtension);
+
+resultingListOfFolders.addAll(Arrays.asList(tmpRes[1]));
+foldersList.addAll(Arrays.asList(temporaryResult[1]));
+
+ArrayList<File> filesInTheNextLevelOfDepth = new ArrayList<>();
+ArrayList<File> filesOnNextLevel = new ArrayList<>();
+
+ArrayList[] returnFilesAndFolderNames(String pathToRootFolder, String fileExtension, Boolean inspectDepth)
+ArrayList[] getContentsNames(String pathToRootFolder, String fileExtension, Boolean inspectDepth)
+
+private static void containAndSaveSameFiles(String zipEntryName, ZipOutputStream zipOutputStream)
+private static void putCopiesToZip(String zipEntryName, ZipOutputStream zipOutputStream)  
+
+public static Boolean deleteFilesWithFlag(String folderName)
+public static Boolean flaggedDeletion(String folderName)
