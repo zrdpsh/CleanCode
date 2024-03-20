@@ -1,0 +1,138 @@
+7.1
+
+if (inspectDepth) depth = 3;
+if (isSearchingInside) depth = 3;
+
+private boolean shuttingDown = false;
+private boolean keepRunning = true;
+
+private boolean pause = false;
+private boolean isPlaying = true;
+
+private boolean flat;
+private boolean isFlat;
+
+private boolean sharp;
+private boolean isSharp;
+
+
+7.2
+
+while (cont) {
+	System.out.println("next number:");
+	double rand = Math.random() * 100000;
+	if (rand > 7000 && rand < 9000) cont = false;
+	
+}
+
+while (!done) {
+	System.out.println("next number:");
+	double rand = Math.random() * 100000;
+	if (rand > 7000 && rand < 9000) done = true;
+	
+}
+
+
+
+while (m != false) {
+	degress = scanner.nextInt();
+	if (degrees < 100 && degrees > 0) {
+		m = true;
+	}
+}
+
+while (!found) {
+	degrees = scanner.nextInt();
+	if (degrees < 100 && degrees > 0) {
+		found = true;
+	}
+}
+
+
+
+7.3
+
+for (int i = 0; i < scale.length; i++)
+{
+	System.out.println(scale[i].playSound());
+}
+
+for (int step = 0; step < scale.length; step++)
+{
+	System.out.println(scale[step].playSound());
+}
+
+
+
+7.4 
+
+if (isMajor) {
+	melody.play(scale[0]);
+}
+
+if (isMinor) {
+	melody.play(scale[6]);
+}
+
+
+int n = -100;
+int m = 212;
+
+int minimum = -100;
+int maximum = 212;
+
+
+
+7.5
+static boolean isSortedAlt(int[] x) {
+	int i = x.length - 1;
+	if (i <= 0) return true;
+	if ((i & 1) > 0) {
+	if (x[i] < x[i - 1]) {
+		return false;
+		}
+	i--;
+	}
+}
+
+static boolean isSortedReverse(int[] arrayToSort) {
+	int i = sortedArray.length - 1;
+	if (i <= 0) return true;
+	if ((i & 1) > 0) {
+	if (arrayToSort[i] < arrayToSort[i - 1]) {
+		return false;
+		}
+	i--;
+	}
+}
+
+
+for (Node tmp = this.head; tmp != null; tmp = tmp.next)
+        {
+            if (tmp.value == _value) nodes.add(tmp);
+        }
+
+for (Node currentNode = this.head; currentNode != null; currentNode = currentNode.next)
+        {
+            if (currentNode.value == _value) nodes.add(currentNode);
+        }
+
+
+
+
+public int checkEach(String key) {
+	int i = 0;
+		for(; i < size && slots[i] != null; i++){
+		if(slots[i%size].equals(key)) break;
+	}
+	return i;
+}
+
+
+public int checkEach(String key) {
+	int slot = 0;
+		for(; slot < size && slots[slot] != null; slot++){
+		if(slots[slot%size].equals(key)) break;
+	}
+	return slot;
+}
