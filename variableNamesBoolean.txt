@@ -84,6 +84,20 @@ int maximum = 212;
 
 
 7.5
+
+while (!found) {
+	degrees = scanner.nextInt();
+	if (degrees < 100 && degrees > 0) {
+		found = true;
+	}
+}
+
+while (degrees > 100 && degrees < 0) {
+	degrees = scanner.nextInt();
+}
+
+
+
 static boolean isSortedAlt(int[] x) {
 	int i = x.length - 1;
 	if (i <= 0) return true;
