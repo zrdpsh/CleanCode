@@ -150,3 +150,16 @@ public int checkEach(String key) {
 	}
 	return slot;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
