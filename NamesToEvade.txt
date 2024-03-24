@@ -1,0 +1,117 @@
+for (File givenFile : arrayToTrackNamesOfFolderCopy) { // }
+for (File given : namesOfcopyFolder) { // }
+
+
+
+
+Font f = new Font("Helvetica-bold-italic", Font.ITALIC, 20);
+Font helvetica = new Font("Helvetica-bold-italic", Font.ITALIC, 20);
+
+
+
+
+private static void drawStringCustom(Graphics2D g, String stringToPrint, int x, int y) { // rest }
+private static void drawStringCustom(Graphics2D screenGraphics, String toPrint, int xCoord, int yCoord) { // rest }
+
+
+
+
+int[] temperatures = getKelvs(input.nextInt());
+int[] tempKelvins = getKelvs(input.nextInt());
+
+
+
+
+private static int[] getKelvs(int months) {
+        int[] kelvs = new int[months];
+        int counter = 0;
+        while (counter < months) {
+            kelvs[counter] = valueFromKeyboard(scanner);
+	// rest }
+}
+
+private static int[] getKelvs(int numMonths) {
+        int[] kelvs = new int[numMonths];
+        int currMonth = 0;
+        for (;currMonth < numMonths;) {
+            kelvs[currMonth] = valueFromKeyboard(scanner);
+	// rest }
+}
+
+
+
+
+int health = 25;
+int healthPoints = 25;
+
+
+
+
+File[] entries = indexOfFiles.listFiles();
+File[] toParse = indexOfFiles.listFiles();
+
+
+
+
+String name = String.format("%s.txt", i);
+String fileName = String.format("%s.txt", i);
+
+
+
+
+File fileToStoreNumbers = new File(name);
+File storedNumbers = new File(fileName);
+
+
+
+
+double finalResultingSum = resultingSum;
+double result = resultingSum;
+
+
+
+
+String[] rawStringSplit = rawString.split(" ");
+String[] splitted = rawString.split(" ");
+
+
+
+
+ArrayList<Integer> filteredArray = filterArrayByHowLargeCombined(arrayToFilter, FILTER_NUMBER);
+ArrayList<Integer> result = filterArrayBySize(arrayToFilter, FILTER_NUMBER);
+
+
+
+
+public static void printKeyValuePairs(int howMuch) {
+	while (keyValuePairs.size() < howMuch) {//.. 
+}
+
+public static void printKeyValuePairs(int resultSize) {
+	while (keyValuePairs.size() < resultSize) {//.. 
+}
+
+
+
+int[] keys = new int[givenLength];
+for (int e = 0; e < givenLength; e++) {
+	keys[e] = r.nextInt(range)+1; 
+	// 
+}
+
+int[] mapKeys = new int[givenLength];
+for (int e = 0; e < givenLength; e++) {
+	mapKeys[e] = r.nextInt(range)+1; 
+	// 
+}
+
+
+
+
+
+
+
+
+
+
+
