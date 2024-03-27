@@ -1,0 +1,158 @@
+3.1
+
+public class TrackManager
+{
+    // code
+}
+
+public class MusicParser
+{
+    // code
+}
+    
+
+
+
+public class Player
+{
+    // code
+}
+
+public class MusicPlayer
+{
+    // code
+}
+    
+
+
+
+
+public class Organizer
+{
+    // code
+}
+
+public class MusicOrganizer
+{
+    // code
+}
+    
+
+
+
+
+public class Track
+{
+    // code
+}
+
+public class MusicTrack
+{
+    // code
+}
+    
+
+
+
+
+public class Artist
+{
+    // code
+}
+
+public class MusicArtist
+{
+    // code
+}
+
+    
+
+
+
+3.2
+
+public void newFile(String filename)
+	{
+		tracks.add(new MusicTrack(filename));
+	}
+
+public void addFile(String filename) { // code }
+    
+
+
+
+
+public void newTrack(MusicTrack track)
+	{
+        	tracks.add(track);
+    	}
+
+public void addTrack(String filename) { // code }
+    
+
+
+
+
+public void trackAsString(int index)
+    	{
+        	System.out.print("Track " + index + ": ");
+        	MusicTrack track = tracks.get(index);
+        	System.out.println(track.getDetails());
+    	}
+
+public void listTrack(int index) { // code }
+    
+
+
+
+
+public void printAllTracks()
+    	{
+        	System.out.println("Track listing: ");
+
+        	for(MusicTrack track : tracks) {
+            		System.out.println(track.getDetails());
+        	}
+        System.out.println();
+    	}
+
+public void listAllTracks(int index) { // code }
+    
+
+
+
+
+public void printTracksByArtist(String artist)
+	{
+        	for(MusicTrack track : tracks) {
+            		if(track.getArtist().contains(artist)) {
+                		System.out.println(track.getDetails());
+            		}
+        	}
+    	}
+
+public void listByArtist(String artist) { // code }
+    
+
+
+
+
+public void play()
+	{
+        	f(tracks.size() > 0) {
+            		player.startPlaying(tracks.get(0).getFilename());
+        	}
+    	}
+
+public void playFirst() { // code }
+    
+
+
+
+
+public void stop()
+{
+	player.stop();
+}
+
+public void stopPlaying() { // code }
