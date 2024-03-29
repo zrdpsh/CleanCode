@@ -1,0 +1,167 @@
+public void attack(Creature enemy, int distance) {
+  if (distance <= 1) {
+	 enemy.gotDamage(this.damage);
+  }
+}
+
+public void attackCreature(Creature enemy, int distance) {
+  if (distance <= 1) {
+	 enemy.gotDamage(this.damage);
+  }
+}
+
+// method call will look like:
+// newAlpaca.attackCreature(newCreature, 7);
+
+
+
+
+public void tameTheAlpaca(Alpaca newAlpaca) {
+	// ..code
+}
+
+public void tameAlpaca(Alpaca newAlpaca) {
+	// ..code
+}
+
+// newDwarf.tameAlpaca(newAlpaca)
+
+
+
+
+public void attack(Creature enemy, int distance, int useWeapon, int boostAttack) { //attack with special force
+	// ..code
+} //attack method
+
+
+public void attackBoosted(Creature enemy, int distance, int useWeapon, int boostAttack) { //attack with special force
+	// ..code
+}
+
+// newDwarfWarrior.attackBoosted(newAlpaca, 8, 0, 1);
+
+
+
+
+public int howMuchDamage() {
+  return this.damage;
+}
+
+public int getDamagePoints() {
+  return this.damage;
+} 
+
+// hammer.getDamagePoints()
+
+
+
+
+public int getKindOfWeapon() {
+  return this.kindOfWeapon;
+}
+
+public int getWeaponType() {
+  return this.kindOfWeapon;
+}
+
+// newWeapon.getWeaponType()
+
+
+
+
+public void lowerWeaponResource() {
+	this.resource -= costOfOneHit;
+}
+
+public void decreaseCapacity() {
+	this.capacity -= costOfOneHit;
+}
+
+// hammer.decreaseCapacity()
+
+
+
+
+public static int maximumOfNIntegers(int[] input) {
+	// ..code
+}
+
+public static int integersMax(int[] input) {
+	// ..code
+}
+
+// newTable.integersMax(integerArray);
+
+
+
+
+public String[] create(String albumName, String date, String artistName, int rating){
+	// ..code
+}
+
+public String[] createAlbum(String albumName, String date, String artistName, int rating){
+	// ..code
+}
+
+// newMusicLibrary.createAlbum("Deftones", "2001", "White Pony", "189340123011")
+
+
+
+
+public String[][] getAll(){
+	// ..code
+}
+
+public String[][] getAllalbums(){
+	// ..code
+}
+
+//String[][] allMusic = newMusicLibrary.getAllalbums();
+
+
+
+
+public String[] getAlbumsByArtist(String artistName){
+	// code
+}
+
+public String[] getAlbumsByArtist(String artistName){
+	// code
+}
+
+// String[] deftonesAlbums = newMusicLibrary.getAlbumsByArtist("Deftones");
+
+
+
+
+public void update(String name, int newRating){
+	// ..code
+}
+
+public void updateRating(String name, int newRating){
+	// ..code
+}
+
+// newMusicLibrary.updateRating("White Pony", 5);
+
+
+
+
+public delete(String albumName){
+	// .. code 
+}
+
+public deleteAlbum(String albumName){
+	// .. code 
+}
+
+// newMusicLibrary.deleteAlbum("White Pony");
+
+
+
+
+
+
+
+
+
