@@ -104,7 +104,7 @@ public void outputBarChart() {
 public void outputGrades() {
 	System.out.printf("The grades are:%n%n");
 
-	for (int student = 0; student = grades.length; student++) {
+	for (int student = 0; student < grades.length; student++) {
 		System.out.printf("Student %2d: %3d%n", student + 1, grades[student]);
 	}
 }
@@ -118,7 +118,7 @@ public void outputGrades() {
 	
 	System.out.printf(HEADER);
 
-	for (int student = 0; student = grades.length; student++) {
+	for (int student = 0; student < grades.length; student++) {
 		System.out.printf(INTRODUCE_STUDENT, student + 1, grades[student]);
 	}
 }
