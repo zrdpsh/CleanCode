@@ -1,0 +1,166 @@
+public class DeckOfCards {
+	
+	// ..code
+
+	for (int count = 0; count < 52; count++) {
+		deck[count] = new Card(faces[count % 13], suits[count / 13]);
+	}
+}
+
+// change two magic numbers to constants
+
+public class DeckOfCards {
+	private static final int DECK_LENGTH = 52;
+	private static final int CARD_FACES = 13;
+
+	// ..code
+
+	for (int count = 0; count < DECK_LENGTH; count++) {
+		deck[count] = new Card(faces[count % CARD_FACES], suits[count / CARD_FACES]);
+	}
+}
+
+
+
+
+
+public class DeckOfCardsTest {
+	// .. code
+
+	for (int i = 1; i <= deck.getLength(); i++) {
+		System.out.printf("%s - ", myDeck.getCard());
+	}
+	
+}
+
+
+// replace hardcoded formatting string with constant
+
+public class DeckOfCardsTest {
+
+	final String LINE_FORMATTER = "%s - ";
+
+	// .. code
+
+	for (int i = 1; i <= deck.getLength(); i++) {
+		System.out.printf(LINE_FORMATTER, myDeck.getCard());
+	}
+	
+}
+
+
+
+
+
+public void outputBarChart() {
+	System.out.println("Grade distribution:");
+	
+	for (int grade : grades) {
+		++frequency[grade / 10];
+	}
+
+	for (int count = 0; count < frequency.length; count++) {
+		if (count == 10) System.out.printf("%5d:", 100);
+		if (count != 10) System.out.printf("%02d-%02d: " , count * 10, count * 10 + 9);
+	}
+
+	for (int stars = 0; stars < frequency[count]; stars++) {
+		System.out.print("*");
+	}
+}
+
+// replacing magic numbers and format strings with constants
+
+public void outputBarChart() {
+
+	final int SYSTEM_BASE = 10;
+	final int MAX_GRADE = 100;
+	final String DEFAULT_FORMATTER = "%02d-%02d: ";
+	final String MAX_NUMBER_FORMATTER = "%5d:";
+	final String RENDERING_SYMBOL = "*";
+
+
+	System.out.println("Grade distribution:");
+	
+	for (int grade : grades) {
+		++frequency[grade / SYSTEM_BASE];
+	}
+
+	for (int count = 0; count < frequency.length; count++) {
+		int subRange = count*SYSTEM_BASE;
+		if (count == SYSTEM_BASE) System.out.printf(MAX_GRADE_FORMATTER, MAX_GRADE);
+		if (count != SYSTEM_BASE) System.out.printf(DEFAULT_FORMATTER, subRange, subRange + (SYSTEM_BASE-1);
+	}
+
+		for (int stars = 0; stars < frequency[count]; stars++) {
+		System.out.print(RENDERING_SYMBOL);
+	}
+}
+
+
+
+
+
+public void outputGrades() {
+	System.out.printf("The grades are:%n%n");
+
+	for (int student = 0; student = grades.length; student++) {
+		System.out.printf("Student %2d: %3d%n", student + 1, grades[student]);
+	}
+}
+
+
+// replacing format strings with constants
+
+public void outputGrades() {
+	final String HEADER = "The grades are:%n%n";
+	final String INTRODUCE_STUDENT = "Student %2d: %3d%n";
+	
+	System.out.printf(HEADER);
+
+	for (int student = 0; student = grades.length; student++) {
+		System.out.printf(INTRODUCE_STUDENT, student + 1, grades[student]);
+	}
+}
+
+
+
+
+
+public class RollDie {
+	public static void main(String[] args) {
+		// ..code
+		
+		for (int roll = 1; roll <= 60_000_000; roll++ ) {
+			int face = 1 + randomNumbers.nextInt(6);
+
+		// ..code
+
+		System.out.println("Face\tFrequency");
+		System.out.printf("1\t%d%n2\t%d%n3\t%d%n4\t%d%n5\t%d%n6\t%d%n", frequency[0], frequency[1], frequency[2], frequency[3], frequency[4], frequency[5]);
+		}
+	}	
+}
+
+// replacing hardcoded number of tests and format string with constants, add numbers of dies as a constant, replacing printf call with loop
+
+public class RollDie {
+	public static void main(String[] args) {
+		int NUMBER_OF_TESTS = 60_000_000;
+		int DIE_FACES = 6;
+		String LINE_PADDING = "%d\t\t\t%d%n";
+		
+		// ..code
+		
+		for (int roll = 1; roll <= NUMBER_OF_TESTS; roll++ ) {
+			int face = 1 + randomNumbers.nextInt(6);
+
+		// ..code
+
+		System.out.println("Face\tFrequency");
+			for (int i = 1; i <= DIE_FACES; i++) {
+				System.out.printf(LINE_PADDING, index, frequency[index-1]);
+			}
+		}	
+	}
+}
