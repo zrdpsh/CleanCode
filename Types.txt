@@ -38,3 +38,163 @@ for (; n <= 0;) {
 // ..code
 
 double average = sum / n;
+
+
+
+
+private static String formatDate(long date) {
+  // ..code
+  int epoch = (int) ((date / 1000) % (60 * 60 * 24));
+  // ..code
+}
+
+/*----- replacing int with long -----*/
+
+private static String formatDate(long date) {
+  // ..code
+  long epoch = (date / 1000) % (60 * 60 * 24);
+  // ..code
+}
+
+
+
+
+Scanner input = new Scanner(System.in);
+
+System.out.print("Enter the purchase amount:");
+double purchaseAmount = input.nextDouble();
+
+double tax = purchaseAmount * 0.06;
+System.out.println("The purchase amount is " + (int)(tax * 100) / 100.00);
+
+/*----- without casting to int results has changed slightly (i.e. 8.69 becomes 8.7) because rounding error has been eliminated -----*/
+
+Scanner input = new Scanner(System.in);
+
+System.out.print("Enter the purchase amount:");
+double purchaseAmount = input.nextDouble();
+
+double tax = purchaseAmount * 0.06;
+System.out.println("The purchase amount is " + tax * 100) / 100.00;
+
+
+
+
+System.out.print("Enter annual interest rate:");
+double annualInterestRate  = input.nextDouble();
+
+double monthlyInterestRate = annualInterestRate / 1200;
+
+System.out.print("Enter the number of years:");
+int numberOfYears = input.nextInt();
+
+System.out.print("Enter loan amount:");
+double loanAmount = input.nextDouble();
+
+double monthlyPayment = loanAmount * monthlyInterestRate / (1 - 1/Math.pow(1 + monthlyInterestRate, numberOfYears*12));
+
+/*----- checks added for numbers, which lead to possible zero division -----*/
+
+System.out.print("Enter annual interest rate:");
+double annualInterestRate  = input.nextDouble();
+for (; annualInterestRate <= 0.0;) {
+    System.out.println("Enter positive number:");
+    annualInterestRate = input.nextDouble();
+}
+
+
+double monthlyInterestRate = annualInterestRate / 1200;
+
+System.out.print("Enter the number of years:");
+int numberOfYears = input.nextInt();
+for (; annualInterestRate <= 0;) {
+    System.out.println("Enter positive number:");
+    annualInterestRate = input.nextInt();
+}
+
+
+System.out.print("Enter loan amount:");
+double loanAmount = input.nextDouble();
+
+double monthlyPayment = loanAmount * monthlyInterestRate / (1 - 1/Math.pow(1 + monthlyInterestRate, numberOfYears*12));
+
+
+
+
+System.out.print("Enter the plane speed in meters per second");
+int planeSpeed  = input.nextInt();
+
+System.out.print("Enter the plane acceleration in meters per second squared");
+int planeAcceleration = input.nextInt();
+
+double runwayLength = (planeSpeed * 2) / (2.0 * planeAcceleration); 
+
+/*----- added check for possible zero division, all numeric types initialized as double to eliminate casting -----*/
+
+System.out.print("Enter the plane speed in meters per second");
+double planeSpeed  = input.nextDouble();
+
+System.out.print("Enter the plane acceleration in meters per second squared");
+double planeAcceleration = input.nextDouble();
+
+for (; planeAcceleration <= 0.0;) {
+    System.out.println("Enter positive number:");
+    planeAcceleration = input.nextDouble();
+}
+
+double runwayLength = (planeSpeed * 2) / (2 * planeAcceleration);
+
+
+
+
+System.out.print("Enter your sum:");
+double amount = input.nextDouble();
+
+int numberOfDollars = (int) amount / 100;
+
+/*----- changed double to int to eliminate type conversion -----*/
+
+System.out.print("Enter your overall sum in cents:");
+int amount = input.nextInt();
+
+int numberOfDollars = amount / 100;
+
+
+
+
+int[] firstXs = {centerX1 - height1/2, centerX1 + height1/2};
+int[] firstYs = {centerY1 - width1/2, centerY1 + width1/2};
+int[] secondXs = {centerX2 - height2/2, centerX2 + height2/2};
+int[] secondYs = {centerY2 - width2/2, centerY2 + width2/2};
+
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 2; j++) {
+        if (secondXs[i] > firstXs[0] && secondXs[i] < firstXs[1] && secondYs[j] > firstYs[0] && secondYs[j] < firstYs[1]) {
+            System.out.println("Rectangles are overlapping");
+        }
+    }
+}
+
+/*----- added boolean variables to replace long conditional -----*/
+
+// ..code
+
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 2; j++) {
+        boolean horizontalWithin = secondXs[i] > firstXs[0] && secondXs[i] < firstXs[1];
+        boolean verticalWithin = secondYs[j] > firstYs[0] && secondYs[j] < firstYs[1];
+
+        if (horizontalWithin && verticalWithin) {
+            System.out.println("Rectangles are overlapping");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
