@@ -15,3 +15,26 @@ if (isAlphabeticHex)
   System.out.println("the decimal value for hex digit " + ch + " is " + value);
   return;
 }
+
+
+
+
+java.util.Scanner input = new java.util.Scanner(System.in);
+System.out.println("Enter the number of items: ");
+int n = input.nextInt();
+// ..code
+double average = sum / n;
+
+/*----- with zero division check -----*/
+
+java.util.Scanner input = new java.util.Scanner(System.in);
+System.out.println("Enter the number of items: ");
+int n = input.nextInt();
+for (; n <= 0;) {
+    System.out.println("Enter positive number:");
+    n = input.nextInt();
+}
+
+// ..code
+
+double average = sum / n;
