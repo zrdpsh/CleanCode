@@ -1,0 +1,17 @@
+if ('A' <= ch && ch <= 'F') 
+{
+  int value = ch - 'A' + 10;
+  System.out.println("the decimal value for hex digit " + ch + " is " + value);
+  return;
+}
+
+/*----- with boolean variable -----*/
+
+boolean isAlphabeticHex = 'A' <= ch && ch <= 'F';
+
+if (isAlphabeticHex) 
+{
+  int value = ch - 'A' + 10;
+  System.out.println("the decimal value for hex digit " + ch + " is " + value);
+  return;
+}
