@@ -1,0 +1,225 @@
+public static void main(String[] args) {
+	// ..code
+	System.out.println("Carly's makes the food that makes it a party");
+}
+
+/*------- replace literal with String constant --------*/
+
+public static void main(String[] args) {
+	final String MOTTO = "Carly's makes the food that makes it a party";
+	// ..code
+	System.out.println(MOTTO);
+}
+
+
+
+
+
+
+public static void main(String[] args) {
+	// ..code
+
+	System.out.println("Enter your grade point average:");
+	double gradePoint = scanner.nextDouble();
+
+	System.out.println("Enter your name:");
+	String name = scanner.next();
+
+}
+
+/*------- replace literals with String constants --------*/
+
+public static void main(String[] args) {
+	final String ENTER_GRADE = "Enter your grade point average:";
+	final String ENTER_NAME = "Enter your name:";
+
+
+	// ..code
+
+	System.out.println(ENTER_GRADE);
+	double gradePoint = scanner.nextDouble();
+
+	System.out.println(ENTER_NAME);
+	String name = scanner.next();
+
+}
+
+
+
+
+
+
+public class CarlyEventPriceWithMethods {
+
+	// ..code
+
+	public static String getEventNumber()
+	{
+		// ..code
+		System.out.println("Enter the number of guests: ");
+		// ..code
+	}
+
+}
+
+/*------- replace literal with String constant --------*/
+
+public class CarlyEventPriceWithMethods {
+	static final String ENTER_GUESTS = "Enter the number of guests: ";
+
+	// ..code
+
+	public static String getEventNumber()
+	{
+		// ..code
+		System.out.println(ENTER_GUESTS);
+		// ..code
+	}
+
+}
+
+
+
+
+
+
+public static void main(String[] args) {
+
+	int[] frequency = {7, 77, 388, 11, 41, 2};
+
+	Random rand = new Random();
+
+	// ..code
+
+	for (int roll = 1; roll <= 2; roll++) {
+		int face = 1 + rand.nextInt(6);
+
+		// ..code
+
+		System.out.println("Face\tFrequency");
+		for (int index = 1; index <= 6; index++) {
+			System.out.printf("%d\t\t\t%d%n", index, frequency[index-1]);
+		}
+	}
+}
+
+/*------- replace literals with String constants --------*/
+
+public static void main(String[] args) {
+	final int NUMBER_OF_TESTS = 2;
+	final int DIE_FACES = 6;
+	final String LINE_PADDING = "%d\t\t\t%d%n";
+
+	int[] frequency = {7, 77, 388, 11, 41, 2};
+
+	Random rand = new Random();
+
+	// ..code
+
+	for (int roll = 1; roll <= NUMBER_OF_TESTS; roll++) {
+		int face = 1 + rand.nextInt(6);
+
+		// ..code
+
+		System.out.println("Face\tFrequency");
+		for (int index = 1; index <= DIE_FACES; index++) {
+			System.out.printf(LINE_PADDING, index, frequency[index-1]);
+		}
+	}
+}
+
+
+
+
+
+
+public static void main(String[] args) {
+
+	// ..code
+	
+	boolean done = false;
+	boolean found = false;
+	while (!done) {
+		System.out.println("next number:");
+		double rand = Math.random() * 100000;
+		System.out.println(rand);
+		if (rand > 7000 && rand < 9000) done = true;
+	}
+}
+
+/*------- replace literals with String constants --------*/
+
+public static void main(String[] args) {
+
+	final String ENTER_NEXT = "Enter next number: ";
+	final int SCALING_COEFFICIENT = 100000;
+	final int LOWER_BOUND = 7000;
+	final int HIGHER_BOUND = 9000;
+
+	// ..code
+	
+	boolean done = false;
+	boolean found = false;
+	while (!done) {
+		System.out.println(ENTER_NEXT);
+		double rand = Math.random() * SCALING_COEFFICIENT;
+		System.out.println(rand);
+		if (rand > LOWER_BOUND && rand < HIGHER_BOUND) done = true;
+	}
+}
+
+
+
+
+
+
+public static void main(String[] args) {
+	float dozenPrice = 3.25f;
+	float loosePrice = 0.45f;
+
+	Scanner newScan = new Scanner(System.in);
+
+	System.out.println("How much eggs do you need?");
+
+	int numOfEggs = newScan.nextInt();
+
+	int dozens = numOfEggs/12;
+	int looseEggs = numOfEggs%12;
+
+	// ..code
+}
+
+/*------- add final modifiers to float variables, add String constant --------*/
+
+public static void main(String[] args) {
+	final float dozenPrice = 3.25f;
+	final float loosePrice = 0.45f;
+	final String QUESTION = "How much eggs do you need?";
+
+	Scanner newScan = new Scanner(System.in);
+
+	System.out.println(QUESTION);
+
+	int numOfEggs = newScan.nextInt();
+
+	int dozens = numOfEggs/12;
+	int looseEggs = numOfEggs%12;
+
+	// ..code
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
