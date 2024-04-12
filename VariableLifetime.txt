@@ -79,6 +79,8 @@ public static class DestroyableObject extends SpriteObjectSqr {
 - elimating unnecessary if-else
 - replacing long boolean expression with expression with named variables
 - rename boolean variable checkDestroyable into isDestroyable
+- rewrite 11 variable to camelCase
+- rename collist to columns to get rid of noninformative "list" postfix
  */
 
 
@@ -91,46 +93,46 @@ public class FrameworkMovingObj {
         private double x = 0;
         private double y = 0;
         private double depth = 0;
-        private double coloffx = 0;
-        private double coloffy = 0;
+        private double columnOfX = 0;
+        private double columnOfY = 0;
         private double rotation = 0;
 
-        public SpriteSquare(String texturepath, double xpos, double ypos, double colwidth, double colheight, double coladdx, double coladdy, double rot, ArrayList collist) {
-            if (texturepath.isEmpty()) {
+        public SpriteSquare(String texturePath, double xPos, double yPos, double colWidth, double colHeight, double colAddX, double colAddY, double rot, ArrayList columns) {
+            if (texturePath.isEmpty()) {
                 texture = new Texture(Gdx.files.internal("empty.png"));
             }
 
-            if (!texturepath.isEmpty()) {
-                texture = new Texture(texturepath);
+            if (!texturePath.isEmpty()) {
+                texture = new Texture(texturePath);
             }
 
-            this.x = xpos;
-            this.y = ypos;
-            depth = ypos;
-            this.collision.height = colheight;
-            this.collision.width = colwidth;
-            this.collision.x = xpos + coladdx;
-            this.collision.y = ypos + coladdy;
+            this.x = xPos;
+            this.y = xPos;
+            depth = xPos;
+            this.collision.height = colHeight;
+            this.collision.width = colWidth;
+            this.collision.x = xPos + colAddX;
+            this.collision.y = yPos + colAddY;
 
-            if (collist!=null) {
-                coloffx = coladdx;
-                coloffy = coladdy;
-                collist.add(collision);
+            if (columns!=null) {
+                columnOfX = colAddX;
+                columnOfY = colAddY;
+                columns.add(collision);
             }
 
             rotate(rot);
         }
 
-        public void setPosition(double xpos, double ypos) {
-            collision.setPosition(xpos + coloffx, ypos + coloffy);
-            this.x = xpos;
-            this.y = ypos;
+        public void setPosition(double xPos, double yPos) {
+            collision.setPosition(xPos + colOfX, yPos + colOfY);
+            this.x = xPos;
+            this.y = xPos;
         }
 
-        public void addPosition(Vector3 movevect) {
-            this.x = x + movevect.x;
-            this.y = y + movevect.y;
-            collision.setPosition(x + coloffx,  y + coloffy);
+        public void addPosition(Vector3 moveVector) {
+            this.x = x + moveVector.x;
+            this.y = y + moveVector.y;
+            collision.setPosition(x + colAddX,  y + colOfY);
         }
 
         public Vector3 getPosition() {
@@ -146,21 +148,21 @@ public class FrameworkMovingObj {
 public static class DestroyableObject extends SpriteObjectSqr {
     private int health = 0;
 
-    public DestroyableObject(String texturepath, double xpos, double ypos, double colwidth, double colheight, double coladdx, double coladdy, double rot, ArrayList collist) {
-        super(texturepath, xpos, ypos, colwidth, colheight, coladdx, coladdy, rot, collist);
+    public DestroyableObject(String texturePath, double xPos, double yPos, double colWidth, double colHeight, double colAddX, double colAddY, double rot, ArrayList columns) {
+        super(texturePath, xPos, yPos, colWidth, colHeight, colAddX, colAddY, rot, columns);
         this.health = 5;
     }
 
-    public boolean isDestroyable(SpaceshipGameManager.Player player, SpaceshipGameManager manager) {
+    public boolean isDestroyable(SpaceshipGameManager.Player player, SpaceshipGameManager GameManager) {
         boolean DISPLACE_LESS_64 = MovementMath.pointDis(player.getPosition(),getPosition())<64;
         boolean OBJECT_OVERLAPS = MovementMath.overlaps(player.sprite.collision, collision, rotation);
 
-        if(DISPLACE_LESS_64 && OBJECT_OVERLAPS && player.justclicked && !manager.pause) {
-            player.justclicked = false;
+        if(DISPLACE_LESS_64 && OBJECT_OVERLAPS && player.justClicked && !manager.pause) {
+            player.justClicked = false;
             this.health--;
             manager.ParticleList.add(new FrameworkMO.ParticleSet(0,getPosition(),manager.PlanetList));
-            SpaceshipGameManager.Item additem = new SpaceshipGameManager.Item(0);
-            additem.drop(MovementMath.addVect(getPosition(), MovementMath.lengthDir(Math.random()*360,8)));
+            SpaceshipGameManager.Item addItem = new SpaceshipGameManager.Item(0);
+            addItem.drop(MovementMath.addVect(getPosition(), MovementMath.lengthDir(Math.random()*360,8)));
         }
 
         return (health>0);
