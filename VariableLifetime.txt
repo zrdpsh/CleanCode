@@ -17,8 +17,8 @@ public static class SpriteObjectSqr {
         x = xpos;
         y = ypos;
         this.depth = ypos;
-        collision.height = (float) colheight;
-        collision.width = (float) colwidth;
+        collision.height = (float)colheight;
+        collision.width = (float)colwidth;
         collision.x = (float)(xpos + coladdx);
         collision.y = (float)(ypos + coladdy);
 
