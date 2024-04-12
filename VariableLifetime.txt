@@ -1,0 +1,172 @@
+public static class SpriteObjectSqr {
+    public Texture texture;
+    public Rectangle collision = new Rectangle();
+    public double x = 0;
+    public double y = 0;
+    public double depth = 0;
+    public double coloffx = 0;
+    public double coloffy = 0;
+    public double rotation = 0;
+
+    public SpriteObjectSqr(String texturepath, double xpos, double ypos, double colwidth, double colheight, double coladdx, double coladdy, double rot, ArrayList collist) {
+        if (texturepath.isEmpty()) {
+            texture = new Texture(Gdx.files.internal("empty.png"));
+        } else {
+            texture = new Texture(texturepath);
+        }
+        x = xpos;
+        y = ypos;
+        this.depth = ypos;
+        collision.height = (float) colheight;
+        collision.width = (float) colwidth;
+        collision.x = (float)(xpos + coladdx);
+        collision.y = (float)(ypos + coladdy);
+
+        if (collist!=null) {
+            coloffx = coladdx;
+            coloffy = coladdy;
+            collist.add(collision);
+        }
+
+        rotate(rot);
+    }
+
+    public void setPosition(double xpos, double ypos) {
+        collision.setPosition((float) (xpos + coloffx), (float) (ypos + coloffy));
+        x = xpos;
+        y = ypos;
+    }
+
+    public void addPosition(Vector3 movevect) {
+        x = x + movevect.x;
+        y = y + movevect.y;
+        collision.setPosition((float) (x + coloffx), (float) (y + coloffy));
+    }
+
+    public Vector3 getPosition() {
+        return new Vector3((float) x, (float) y, 0);
+    }
+
+    public void rotate(double r) {
+        rotation = r;
+    }
+
+}
+
+
+public static class DestroyableObject extends SpriteObjectSqr {
+    public int health = 0;
+    public DestroyableObject(String texturepath, double xpos, double ypos, double colwidth, double colheight, double coladdx, double coladdy, double rot, ArrayList collist) {
+        super(texturepath, xpos, ypos, colwidth, colheight, coladdx, coladdy, rot, collist);
+        health = 5;
+    }
+    public boolean checkDestroyable(SpaceshipGameManager.Player player, SpaceshipGameManager manager) {
+        if(MovementMath.pointDis(player.getPosition(),getPosition())<64 && MovementMath.overlaps(player.sprite.collision, collision, rotation) && player.justclicked && !manager.pause) {
+            player.justclicked = false;
+            health--;
+            manager.ParticleList.add(new FrameworkMO.ParticleSet(0,getPosition(),manager.PlanetList));
+            SpaceshipGameManager.Item additem = new SpaceshipGameManager.Item(0);
+            additem.drop(MovementMath.addVect(getPosition(), MovementMath.lengthDir(Math.random()*360,8)));
+        }
+
+        return (health>0);
+    }
+}
+
+/*
+- making 8 public variables private to decrease their visibility
+- eliminating 10 unnecessary casts from double to float.
+- elimating unnecessary if-else
+- replacing long boolean expression with expression with named variables
+- rename boolean variable checkDestroyable into isDestroyable
+ */
+
+
+public class FrameworkMovingObj {
+
+
+    public static class SpriteSquare {
+        private Texture texture;
+        private Rectangle collision = new Rectangle();
+        private double x = 0;
+        private double y = 0;
+        private double depth = 0;
+        private double coloffx = 0;
+        private double coloffy = 0;
+        private double rotation = 0;
+
+        public SpriteSquare(String texturepath, double xpos, double ypos, double colwidth, double colheight, double coladdx, double coladdy, double rot, ArrayList collist) {
+            if (texturepath.isEmpty()) {
+                texture = new Texture(Gdx.files.internal("empty.png"));
+            }
+
+            if (!texturepath.isEmpty()) {
+                texture = new Texture(texturepath);
+            }
+
+            this.x = xpos;
+            this.y = ypos;
+            depth = ypos;
+            this.collision.height = colheight;
+            this.collision.width = colwidth;
+            this.collision.x = xpos + coladdx;
+            this.collision.y = ypos + coladdy;
+
+            if (collist!=null) {
+                coloffx = coladdx;
+                coloffy = coladdy;
+                collist.add(collision);
+            }
+
+            rotate(rot);
+        }
+
+        public void setPosition(double xpos, double ypos) {
+            collision.setPosition(xpos + coloffx, ypos + coloffy);
+            this.x = xpos;
+            this.y = ypos;
+        }
+
+        public void addPosition(Vector3 movevect) {
+            this.x = x + movevect.x;
+            this.y = y + movevect.y;
+            collision.setPosition(x + coloffx,  y + coloffy);
+        }
+
+        public Vector3 getPosition() {
+            return new Vector3(x, y, 0);
+        }
+
+        public void rotate(double r) {
+            this.rotation = r;
+        }
+    }
+}
+
+public static class DestroyableObject extends SpriteObjectSqr {
+    private int health = 0;
+
+    public DestroyableObject(String texturepath, double xpos, double ypos, double colwidth, double colheight, double coladdx, double coladdy, double rot, ArrayList collist) {
+        super(texturepath, xpos, ypos, colwidth, colheight, coladdx, coladdy, rot, collist);
+        this.health = 5;
+    }
+
+    public boolean isDestroyable(SpaceshipGameManager.Player player, SpaceshipGameManager manager) {
+        boolean DISPLACE_LESS_64 = MovementMath.pointDis(player.getPosition(),getPosition())<64;
+        boolean OBJECT_OVERLAPS = MovementMath.overlaps(player.sprite.collision, collision, rotation);
+
+        if(DISPLACE_LESS_64 && OBJECT_OVERLAPS && player.justclicked && !manager.pause) {
+            player.justclicked = false;
+            this.health--;
+            manager.ParticleList.add(new FrameworkMO.ParticleSet(0,getPosition(),manager.PlanetList));
+            SpaceshipGameManager.Item additem = new SpaceshipGameManager.Item(0);
+            additem.drop(MovementMath.addVect(getPosition(), MovementMath.lengthDir(Math.random()*360,8)));
+        }
+
+        return (health>0);
+    }
+}
+
+
+
+
