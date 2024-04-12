@@ -73,6 +73,9 @@ public static class DestroyableObject extends SpriteObjectSqr {
     }
 }
 
+
+
+
 /*
 - making 8 public variables private to decrease their visibility
 - eliminating 10 unnecessary casts from double to float.
@@ -84,10 +87,8 @@ public static class DestroyableObject extends SpriteObjectSqr {
  */
 
 
-public class FrameworkMovingObj {
 
-
-    public static class SpriteSquare {
+public static class SpriteSquare {
         private Texture texture;
         private Rectangle collision = new Rectangle();
         private double x = 0;
@@ -143,7 +144,6 @@ public class FrameworkMovingObj {
             this.rotation = r;
         }
     }
-}
 
 public static class DestroyableObject extends SpriteObjectSqr {
     private int health = 0;
@@ -168,6 +168,21 @@ public static class DestroyableObject extends SpriteObjectSqr {
         return (health>0);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
