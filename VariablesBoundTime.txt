@@ -1,0 +1,131 @@
+public class OverlappingRects {
+    public static void main(String[] args) {
+
+        int centerX1 = 106;
+        int centerY1 = 106;
+        int height1 = 26;
+        int width1 = 50;
+
+        int centerX2 = 87;
+        int centerY2 = 100;
+        int height2 = 26;
+        int width2 = 50;
+
+		int[] firstXs = {centerX1 - height1/2, centerX1 + height1/2};
+		int[] firstYs = {centerY1 - width1/2, centerY1 + width1/2};
+	
+	// ..code
+}
+
+	/*
+	in this case variables are bound at the time of editing the code,
+	because they are testing dummy values, which will be (presumably) 
+	replaced in the future
+	*/
+
+
+
+
+public class dwarfFortress{
+   public static void main(String[] args){
+
+	   String RORIEHAS = " points of health, Rorie has ";
+	   String POINTSOFHEALTH = " points of health***";
+	  
+
+	// ..code
+	
+		System.out.println("***after the attack Randolf has " + randolf.getHealth() + RORIEHAS + rorie.getHealth() + POINTSOFHEALTH);
+}
+
+
+
+public class AddFilesInMap {
+
+    static Logger logger = Logger.getLogger(AddFilesInMap.class.getName());
+    static String PATHZIP = "C:\\Users\\Admin\\Documents\\J_files\\boop\\boop\\working_with_zip\\src\\test.zip";
+	
+	// ..code 
+	
+    }
+    private static Map<String, byte[]> addFilesInMapFunction(String PATHZIP) throws IOException {
+        Map<String, byte[]> zipEntryMap = new HashMap<>();
+        FileInputStream fileInputStream = new FileInputStream(PATHZIP);
+	// ..code
+	
+    }
+}
+
+
+	/*
+		in this cases variables are bound at the compile time, 
+		because they are used in two places in the code, 
+		and it's more rational to have opportunity to easily change them 
+		in the unlikely case it would be necessary
+	*/
+	
+	
+	
+public class Percentages {
+
+    public static void main(String[] args) {
+        double a, b;
+        Scanner scanner = new Scanner(System.in);
+        a = scanner.nextInt();
+        b = scanner.nextInt();
+
+        computePercent(a, b);
+        computePercent(b, a);
+
+    }
+	
+	/ ..code
+}
+
+
+	/*
+		in this cases variables are bound at runtime
+		because the idea of the program requires the input from the user
+	*/
+	
+	
+		
+public class WorkingWithMapN {
+    static Logger logger = Logger.getLogger(WorkingWithMaps.class.getName());
+    static Random random = new Random();
+    static int FILTER_NUMBER = 11;
+
+	// ..code
+	
+    public static void printKeyValuePairs(int howMuch) {
+        logger.log(Level.INFO, () -> "PrintKeyValuePairs method is called from main to print Map of length " + howMuch);
+
+        Map<Integer, Integer> keyValuePairs = new HashMap<>();
+
+        logger.log(Level.INFO, () -> "Populating the map with key value pairs inside printKeyValuePairs function");
+        while (keyValuePairs.size() < howMuch) {
+            int e = random.nextInt();
+		
+	// ..code
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*
+	In this case we need new variable at every loop 
+	needs to be reassigned at every iteration so it's bound at runtime in every loop.
+	Performance will contradict the logic of the code.
+	*/
