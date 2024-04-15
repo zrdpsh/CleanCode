@@ -18,8 +18,7 @@ public class OverlappingRects {
 }
 
 	/*
-	in this case variables are bound at the time of editing the code,
-	because they are testing dummy values, which will be (presumably) 
+	in this case variables are bound at the time of editing the code, because they are testing dummy values, which will be (presumably) 
 	replaced in the future
 	*/
 
@@ -58,10 +57,8 @@ public class AddFilesInMap {
 
 
 	/*
-		in this cases variables are bound at the compile time, 
-		because they are used in two places in the code, 
-		and it's more rational to have opportunity to easily change them 
-		in the unlikely case it would be necessary
+	in this cases variables are bound at the compile time, because they are used in two places in the code, 
+	and it's more rational to have opportunity to easily change them in the unlikely case it would be necessary
 	*/
 	
 	
@@ -84,8 +81,8 @@ public class Percentages {
 
 
 	/*
-		in this cases variables are bound at runtime
-		because the idea of the program requires the input from the user
+	in this cases variables are bound at runtime
+	because the idea of the program requires the input from the user
 	*/
 	
 	
@@ -111,21 +108,18 @@ public class WorkingWithMapN {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 	/*
 	In this case we need new variable at every loop 
 	needs to be reassigned at every iteration so it's bound at runtime in every loop.
 	Performance will contradict the logic of the code.
 	*/
+
+
+
+
+
+
+
+
+
+
