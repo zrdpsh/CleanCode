@@ -1,0 +1,296 @@
+public class AverageOfQuizzes
+{
+   public static void main(String[] args)
+   {
+	int[] scores = new int[10];
+	int score = 0;
+	int count = 0;
+	int total = 0;
+	final int QUIT = 999;
+	final int MAX = 10;
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter quiz score or " +
+	 QUIT + " to quit >>");
+	  score = input.nextInt();
+	while(score !=QUIT)
+	{
+	 scores[count] = score;
+	 total += scores[count];
+	 count++;
+	 if(count == MAX)
+		score = QUIT;
+	 if(count != MAX){
+		System.out.print("Enter next quiz score or " +
+		   QUIT + " to quit >> ");
+		score = input.nextInt();
+	 }
+	}
+	// ..code
+	}
+}
+
+
+/*---- replacing array with Map<Integer, Integer> ----*/
+
+
+public class AverageOfQuizzes
+{
+   public static void main(String[] args)
+   {
+	Map<Integer, Integer> scores = new HashMap<Integer, Integer>();
+	int score = 0;
+	int count = 0;
+	Integer total = 0;
+	final int QUIT = 999;
+	final int MAX = 10;
+	
+	
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter quiz score or " +
+	 QUIT + " to quit >>");
+	score = input.nextInt();
+	  
+	for(;score != QUIT;) {
+		scores.put(Integer.valueOf(count), Integer.valueOf(score));
+		Integer.sum(total, scores.get(count));
+		count++;
+		if(count == MAX) score = QUIT;
+		if(count != MAX){
+			System.out.print("Enter next quiz score or " +
+				QUIT + " to quit >> ");
+			score = input.nextInt();
+			}	
+		}
+	// ..code
+	}
+}
+
+
+
+
+
+
+
+public static void main(String[] args) {
+	final int NUM_OF_COINS = 3;
+	final int REPETITIONS = 50000;
+	
+	int[] frequency = new int[NUM_OF_COINS+1];
+	int heads;
+	double fractionOfReps;
+	int asterisks;
+	
+	for (int index = 0; index<REPETITIONS; index++) {
+		heads = 0;
+		for(int j = 0; j<NUM_OF_COINS; j++) {
+			heads+=(int)(Math.random() * 2);
+		}
+		frequency[heads]++;
+	}
+	
+	// ..code
+	
+}
+
+
+/*---- replacing array with Map<Integer, Integer> ----*/
+
+
+public static void main(String[] args) {
+	final int NUM_OF_COINS = 3;
+	final int REPETITIONS = 50000;
+	
+	Map<Integer, Integer> frequency = new HashMap<>();
+	int heads;
+	double fractionOfReps;
+	int asterisks;
+	
+	for (int index = 0; index<REPETITIONS; index++) {
+		heads = 0;
+		for(int j = 0; j<NUM_OF_COINS; j++) {
+			heads+=(int)(Math.random() * 2);
+		}
+		
+		Integer intKey = new Integer(heads);
+		
+		Integer intValue = new Integer(0);
+		if (frequency.containsKey(tmp)) intValue = frequency.get(intKey);
+		
+		frequency.put(intKey, intValue++);
+	}
+	
+	// ..code
+	
+}
+ 
+
+
+
+
+
+
+public class SalesClerks {
+	
+	private SalesClerk[] clerks;
+	
+	// ..code
+	
+	private int findClerk(String name) {
+		for (int = 0; i < filledElements; i++) {
+			if (clerks[i].getName().equals(name)) return i;
+		}
+		return -1;
+	}
+}
+
+
+/*---- replacing array of SalesClerk objects with Map<String, String> ----*/
+
+
+public class SalesClerks {
+	
+	private Map<String, String> clerks;
+	
+	// ..code
+	
+	private boolean findClerk(String name) {
+		return filledElements.containsKey(name);
+	}
+}
+
+
+
+
+
+
+
+public class FindPrice { public static void main(String[] args) { 
+	final int NUMBER_OF_ITEMS = 10;
+	int[] validValues = {101, 108, 201, 213, 266, 304, 311, 409, 411, 412};
+	double[] prices = {0.29, 1.23, 3.50, 0.69, 6.79, 3.19, 0.99, 0.89, 1.26, 8.00};
+	String strItem;
+	int itemOrdered;
+	double itemPrice = 0.0;
+	boolean validItem = false;
+	
+	strItem = JOptionPane.showInputDialog(null, "Enter the item number you want to order");
+	itemOrdered = Integer.parseInt(strItem);
+	for(int x = 0; x < NUMBER_OF_ITEMS; ++x) { 
+		if(itemOrdered == validValues[x]) { 
+			validItem = true;
+			itemPrice = prices[x];
+		} 
+	} 
+	
+	// ..code
+}
+
+
+/*---- replacing two arrays with HashMap<Integer, Double> ----*/
+
+
+public class FindPrice { public static void main(String[] args) { 
+
+	Map<Integer, Double> valuesAndPrices = new HashMap<Integer, Double>();
+	discounts.put(101, 0.29);
+	discounts.put(108, 1.23);
+	discounts.put(201, 3.50);
+	discounts.put(213, 0.69);
+	discounts.put(266, 6.79);
+
+	
+	String strItem;
+	int itemOrdered;
+	double itemPrice = 0.0;
+	boolean validItem = false;
+	
+	strItem = JOptionPane.showInputDialog(null, "Enter the item number you want to order");
+	
+	itemOrdered = Integer.parseInt(strItem);
+	
+	for (Map.Entry<Integer, Double> entry : valuesAndPrices.entrySet()) {
+		if (entry.getKey == itemOrdered) {
+			validItem = true;
+			itemPrice = entry.getValue();
+		}
+	}
+	// ..code
+}
+
+
+
+
+
+
+
+public class FindDiscount { 
+	public static void main(String[] args) { 
+	
+		final int NUM_RANGES = 5;
+		String[] discountCategories = {"Basic", "Apprentice", "Granted", "Advanced", "Premium"};
+		double[] discountRates = {0.00, 0.15, 0.25, 0.45, 0.80};
+		double customerDiscount;
+		String customerCategory;
+		int sub = NUM_RANGES - 1;
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("What is the category on your card?");
+		customerCategory = scanner.nextLine();
+		
+		while(sub >= 0 && !(customerCategory.equals(discountCategories[sub]))) sub--;
+		
+		// ..code
+	
+	}
+}
+
+
+/*---- replacing two arrays with HashMap<String, Double> ----*/
+
+
+public class FindDiscount { 
+
+	public static void main(String[] args) { 
+	
+
+		
+		Map<String, Double> discounts = new HashMap<String, Double>();
+		discounts.put("Basic", 0.00);
+		discounts.put("Apprentice", 0.15);
+		discounts.put("Granted", 0.25);
+		discounts.put("Advanced", 0.45);
+		discounts.put("Premium", 0.80);
+		
+		double customerDiscount;
+		String customerCategory;
+		Double systemAnswer;
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("What is the category on your card?");
+		customerCategory = scanner.nextLine();
+		
+		for (Map.Entry<String, Double> entry : discounts.entrySet()) {
+            if (customerCategory.equals(entry.getKey())) systemAnswer = entry.getValue();
+        }
+		
+		// ..code
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
