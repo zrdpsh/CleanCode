@@ -252,25 +252,23 @@ public class FindDiscount {
 public class FindDiscount { 
 
 	public static void main(String[] args) { 
-	
 
-		
-		Map<String, Double> discounts = new HashMap<String, Double>();
-		discounts.put("Basic", 0.00);
-		discounts.put("Apprentice", 0.15);
-		discounts.put("Granted", 0.25);
-		discounts.put("Advanced", 0.45);
-		discounts.put("Premium", 0.80);
-		
-		double customerDiscount;
-		String customerCategory;
-		Double systemAnswer;
-		
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("What is the category on your card?");
-		customerCategory = scanner.nextLine();
-		
-		for (Map.Entry<String, Double> entry : discounts.entrySet()) {
+	Map<String, Double> discounts = new HashMap<String, Double>();
+	discounts.put("Basic", 0.00);
+	discounts.put("Apprentice", 0.15);
+	discounts.put("Granted", 0.25);
+	discounts.put("Advanced", 0.45);
+	discounts.put("Premium", 0.80);
+	
+	double customerDiscount;
+	String customerCategory;
+	Double systemAnswer;
+	
+	Scanner scanner = new Scanner(System.in);
+	System.out.println("What is the category on your card?");
+	customerCategory = scanner.nextLine();
+	
+	for (Map.Entry<String, Double> entry : discounts.entrySet()) {
             if (customerCategory.equals(entry.getKey())) systemAnswer = entry.getValue();
         }
 		
