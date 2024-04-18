@@ -1,30 +1,30 @@
 public class AverageOfQuizzes
 {
-   public static void main(String[] args)
-   {
+   public static void main(String[] args) {
 	int[] scores = new int[10];
 	int score = 0;
 	int count = 0;
 	int total = 0;
 	final int QUIT = 999;
 	final int MAX = 10;
+
 	Scanner input = new Scanner(System.in);
 	System.out.print("Enter quiz score or " +
 	 QUIT + " to quit >>");
-	  score = input.nextInt();
-	while(score !=QUIT)
-	{
-	 scores[count] = score;
-	 total += scores[count];
-	 count++;
-	 if(count == MAX)
-		score = QUIT;
-	 if(count != MAX){
-		System.out.print("Enter next quiz score or " +
-		   QUIT + " to quit >> ");
 		score = input.nextInt();
-	 }
-	}
+	  
+	while(score !=QUIT) {
+		 scores[count] = score;
+		 total += scores[count];
+		 count++;
+		 if(count == MAX)
+			score = QUIT;
+		 if(count != MAX){
+			System.out.print("Enter next quiz score or " +
+			   QUIT + " to quit >> ");
+			score = input.nextInt();
+				}
+		}
 	// ..code
 	}
 }
@@ -114,7 +114,7 @@ public static void main(String[] args) {
 		Integer intKey = new Integer(heads);
 		
 		Integer intValue = new Integer(0);
-		if (frequency.containsKey(tmp)) intValue = frequency.get(intKey);
+		if (frequency.containsKey(intKey)) intValue = frequency.get(intKey);
 		
 		frequency.put(intKey, intValue++);
 	}
@@ -165,9 +165,9 @@ public class SalesClerks {
 
 
 public class FindPrice { public static void main(String[] args) { 
-	final int NUMBER_OF_ITEMS = 10;
-	int[] validValues = {101, 108, 201, 213, 266, 304, 311, 409, 411, 412};
-	double[] prices = {0.29, 1.23, 3.50, 0.69, 6.79, 3.19, 0.99, 0.89, 1.26, 8.00};
+	final int NUMBER_OF_ITEMS = 5;
+	int[] validValues = {101, 108, 201, 213, 266};
+	double[] prices = {0.29, 1.23, 3.50, 0.69, 6.79};
 	String strItem;
 	int itemOrdered;
 	double itemPrice = 0.0;
@@ -189,31 +189,32 @@ public class FindPrice { public static void main(String[] args) {
 /*---- replacing two arrays with HashMap<Integer, Double> ----*/
 
 
-public class FindPrice { public static void main(String[] args) { 
+public class FindPrice { 
+	public static void main(String[] args) { 
 
-	Map<Integer, Double> valuesAndPrices = new HashMap<Integer, Double>();
-	discounts.put(101, 0.29);
-	discounts.put(108, 1.23);
-	discounts.put(201, 3.50);
-	discounts.put(213, 0.69);
-	discounts.put(266, 6.79);
+		Map<Integer, Double> valuesAndPrices = new HashMap<Integer, Double>();
+		valuesAndPrices.put(101, 0.29);
+		valuesAndPrices.put(108, 1.23);
+		valuesAndPrices.put(201, 3.50);
+		valuesAndPrices.put(213, 0.69);
+		valuesAndPrices.put(266, 6.79);
 
-	
-	String strItem;
-	int itemOrdered;
-	double itemPrice = 0.0;
-	boolean validItem = false;
-	
-	strItem = JOptionPane.showInputDialog(null, "Enter the item number you want to order");
-	
-	itemOrdered = Integer.parseInt(strItem);
-	
-	for (Map.Entry<Integer, Double> entry : valuesAndPrices.entrySet()) {
-		if (entry.getKey == itemOrdered) {
-			validItem = true;
-			itemPrice = entry.getValue();
+		
+		String strItem;
+		int itemOrdered;
+		double itemPrice = 0.0;
+		boolean validItem = false;
+		
+		strItem = JOptionPane.showInputDialog(null, "Enter the item number you want to order");
+		
+		itemOrdered = Integer.parseInt(strItem);
+		
+		for (Map.Entry<Integer, Double> entry : valuesAndPrices.entrySet()) {
+			if (entry.getKey() == itemOrdered) {
+				validItem = true;
+				itemPrice = entry.getValue();
+			}
 		}
-	}
 	// ..code
 }
 
@@ -277,11 +278,6 @@ public class FindDiscount {
 	}
 	
 }
-
-
-
-
-
 
 
 
