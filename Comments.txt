@@ -1,0 +1,158 @@
+public int hashFun(String value)
+{
+	int sum = 0;
+	for (int i = 0; i < value.length(); i++){
+		sum += value.charAt(i);
+	}
+	return (sum % size);
+}
+
+// ..найти свободное место в списке, сначала проверяем через шаг, потом - все подряд
+public int seekSlot(String value)
+{
+	int i;
+	i = hashFun(value);
+	i = checkIndex(i, value);
+	return i;
+}
+
+public int checkIndex(int i, String key) {
+	i = checkViaStep(i, key);
+	if (i >= size) i = checkEach(key);
+	if (i >= size) i = -1;
+	return i;
+}
+
+public int checkViaStep(int i, String key) {
+	for(;i < size && slots[i] != null; i+=step){
+		if(slots[i%size].equals(key)) break;
+	}
+	return i;
+}
+
+public int checkEach(String key) {
+	int i = 0;
+	for(; i < size && slots[i] != null; i++){
+		if(slots[i%size].equals(key)) break;
+	}
+	return i;
+}
+
+
+
+
+
+// ..копируем отдельный файл из старого архива в новый архив - с тем же именем
+private static void copyExistingFileToTheNewArchive(String pathZip, byte[] bytes, String zipEntryName, ZipOutputStream zipOutputStream) throws Exception{
+	ZipEntry zipEntry2nd = new ZipEntry(zipEntryName);
+	zipEntry2nd.setSize(bytes.length);
+	zipOutputStream.putNextEntry(new ZipEntry(zipEntryName));
+	zipOutputStream.write(bytes);
+}
+
+
+
+
+
+// ..удаляем из массива все значения меньше заданного
+public static int[] filterArrayByHowLarge(int[] arrayToFilter, int thresholdNumber) {
+	logger.log(Level.INFO, () -> "filterArrayByHowLarge is called from MAIN  with 2 parameters: ");
+	logger.log(Level.INFO, () -> "Array to filter: " + Arrays.toString((arrayToFilter)));
+	logger.log(Level.INFO, () -> "Threshold number: " + filterNumber);
+
+	Map<Integer, Integer> valuesAndFrequencies = new HashMap<>();
+
+	logger.log(Level.INFO, () -> "Converting array to value-frequency pairs:");
+	for (int e: arrayToFilter) {
+		valuesAndFrequencies.put(e, valuesAndFrequencies.get(e)==null? 0 :valuesAndFrequencies.get(e)+1);
+		logger.log(Level.INFO, () ->  e + " is presented " +  valuesAndFrequencies.get(e) + " times");
+		logger.log(Level.INFO, () -> "filterArrayByHowLarge function");
+	}
+	logger.log(Level.INFO, () -> "OK");
+
+	// ..code
+}
+
+
+
+
+
+// ..создаём список объектов на основе перечисленных в файле личных имён
+public static List<Alpaca> createClassesFromSource(String pathToFile) {
+	logger.log(Level.INFO, () -> "createTheClassesFromSource is called with path " + pathToFile);
+	ArrayList<Alpaca> result = new ArrayList<>();
+
+	try(BufferedReader br = new BufferedReader(new FileReader(pathToFile))) {
+		logger.log(Level.INFO, "Start to create objects from strings: ");
+		for (String lineRead = br.readLine(); lineRead != null; lineRead = br.readLine()) {
+			result.add(createAlpacaFromString(lineRead));
+			logger.log(Level.INFO, () -> "String " + pathToFile + " is added");
+		}
+	} catch (Exception e) {
+		logger.log(Level.INFO, () -> "File doesnt read" + e);
+	}
+	return result;
+}
+
+
+
+
+
+// ..высчитываем площадь поверхностей в комнате, включая или не включая потолок
+public static void calculateRoomWithCeilingFlag(Scanner scanner, boolean ceilingOn)
+{
+	System.out.println("Enter width:");
+	double width = scanner.nextDouble();
+	System.out.println("Enter height:");
+	double height = scanner.nextDouble();
+	System.out.println("Enter length");
+	double length = scanner.nextDouble();
+
+	double wallArea = getWallArea(width, height, length);
+	double price = getPrice(wallArea);
+
+	// ..code
+}
+
+
+
+
+
+// ..конвертируем изображения, добавляя или не добавляя текст поверх
+public static List<File> returnConvertedImagesWithGraphics(String givenFormat, String desiredFormat, int depth, boolean addGraphics) throws IOException {
+	logger.log(Level.INFO, () -> "returnConvertedImages is called with " + givenFormat + " given format, " + desiredFormat + " desired format, on depth of " + depth);
+	logger.log(Level.INFO, addGraphics?"":"don't" + "add graphics");
+
+	ArrayList<File> arrayToTrackNamesOfFolder = new ArrayList<File>();
+	ArrayList<File> result  = new ArrayList<>();
+
+	arrayToTrackNamesOfFolder.add(new File(System.getProperty("user.dir")));
+	logger.log(Level.INFO, "getting the name of the current folder inside the returnToConverterImages");
+
+	logger.log(Level.INFO, "Start searching for files through the folders tree");
+	for(int u = 0; u < depth; u++) {
+
+		// ..code
+} //return converted images
+
+
+
+
+
+// ..добавить файлы из буфера в новый архив и записать на диск
+private static void addBufferedFilesToArchiveAndSave(byte[] bytes, String zipEntryName, ZipOutputStream zipOutputStream) throws IOException {
+	ZipEntry zipEntry2 = new ZipEntry(zipEntryName);
+	zipEntry2.setSize(bytes.length);
+	zipOutputStream.putNextEntry(new ZipEntry(zipEntryName));
+	zipOutputStream.write(bytes);
+}
+
+
+
+
+
+
+
+
+
+
