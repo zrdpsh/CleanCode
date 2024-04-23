@@ -1,0 +1,264 @@
+public class MusicPlayer
+{
+    // The given player. It might be null - прояснение
+    private AdvancedPlayer player;
+    
+
+    public MusicPlayer()
+    {
+        player = null;
+    }
+    
+    
+    // add playSample and playTrack methods - TODO 
+  
+    public void stop()
+    {
+        killPlayer();
+    }
+    
+    // Set up the player ready to play the given file - called before playing anything - прояснение
+    private void setupPlayer(String filename)
+    {
+        try {
+            InputStream is = getInputStream(filename);
+            player = new AdvancedPlayer(is, createAudioDevice());
+        }
+        catch (IOException e) {
+            reportProblem(filename);
+            killPlayer();
+        }
+        catch(JavaLayerException e) {
+            reportProblem(filename);
+            killPlayer();
+        }
+    }
+
+    // helper method for setupPlayer - прояснение
+    private InputStream getInputStream(String filename)
+        throws IOException
+    {
+        return new BufferedInputStream(
+                    new FileInputStream(filename));
+    }
+
+    // Create audioDevice from javazoom library - прояснение
+    private AudioDevice createAudioDevice()
+        throws JavaLayerException
+    {
+        return FactoryRegistry.systemRegistry().createAudioDevice();
+    }
+
+    private void killPlayer()
+    {
+        synchronized(this) {
+            if(player != null) {
+                player.stop();
+                player = null;
+            }
+        }
+    }
+    
+    private void reportProblem(String filename)
+    {
+        System.out.println("There was a problem playing: " + filename);
+    }
+
+}
+
+
+
+
+
+
+import java.util.ArrayList;
+
+// A class to hold details of audio tracks. Individual tracks may be played. - прояснение
+public class MusicOrganizer
+{
+    private ArrayList<Track> tracks;
+    private MusicPlayer player;
+
+    // A reader that can read music files from the disk and load them as tracks. - прояснение
+    private TrackReader reader;
+
+    public MusicOrganizer()
+    {
+        tracks = new ArrayList<Track>();
+        player = new MusicPlayer();
+        reader = new TrackReader();
+        readLibrary("audio");
+        System.out.println("Music library loaded. " + getNumberOfTracks() + " tracks.");
+        System.out.println();
+    }
+    
+    // Add a track file to the collection - прояснение
+    public void addFile(String filename)
+    {
+        tracks.add(new Track(filename));
+    }
+    
+    public void addTrack(Track track)
+    {
+        tracks.add(track);
+    }
+    
+    public void playTrack(int index)
+    {
+        if(indexIsValid(index)) {
+            Track track = tracks.get(index);
+            player.startPlaying(track.getFilename());
+            System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
+        }
+    }
+    
+    public int getNumberOfTracks()
+    {
+        return tracks.size();
+    }
+    
+    public void listTrack(int index)
+    {
+        System.out.print("Track " + index + ": ");
+        Track track = tracks.get(index);
+        System.out.println(track.getDetails());
+    }
+    
+    public void listAllTracks()
+    {
+        System.out.println("Track listing: ");
+
+        for(Track track : tracks) {
+            System.out.println(track.getDetails());
+        }
+        System.out.println();
+    }
+    
+    public void listByArtist(String artist)
+    {
+        for(Track track : tracks) {
+            if(track.getArtist().contains(artist)) {
+                System.out.println(track.getDetails());
+            }
+        }
+    }
+    
+    public void removeTrack(int index)
+    {
+        if(indexValid(index)) {
+            tracks.remove(index);
+        }
+    }
+    
+    public void playFirstTrack()
+    {
+        if(tracks.size() > 0) {
+            player.startPlaying(tracks.get(0).getFilename());
+        }
+    }
+    
+
+    public void stopPlayer()
+    {
+        player.stop();
+    }
+
+    // Determine whether the given index is valid for the collection - прояснение
+    private boolean indexIsValid(int index)
+    {
+        boolean valid = true;
+        
+        if(index < 0) {
+            System.out.println("Index cannot be negative: " + index);
+            valid = false;
+        }
+		
+        if(index >= tracks.size()) {
+            System.out.println("Index is too large: " + index);
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    // Read complete folder from the disk - прояснение
+    private void readLibrary(String folderName)
+    {
+        ArrayList<Track> tempTracks = reader.readTracks(folderName, ".mp3");
+
+        for(Track track : tempTracks) {
+            addTrack(track);
+        }
+    }
+}
+
+
+
+
+
+
+// A helper class for our music application. This class can read files from the file system from a given folder with a specified suffix - представление намерений 
+public class TrackReader
+{
+
+    public TrackReader()
+    {
+
+    }
+    
+    // Read music files from the given library folder with given suffix i.e. ".mp3" or ".ogg" - прояснение
+    public ArrayList<Track> readTracks(String folder, final String suffix)
+    {
+        File audioFolder = new File(folder);
+        ArrayList<Track> tracks = new ArrayList<Track>();
+        File[] audioFiles = audioFolder.listFiles(new FilenameFilter() {
+
+            public boolean accept(File dir, String name)
+            {
+                return name.toLowerCase().endsWith(suffix);
+            }
+        });
+
+        for(File file : audioFiles) {
+            Track trackDetails = decodeDetails(file);
+            tracks.add(trackDetails);
+        }
+        return tracks;
+    }
+
+    // Try to decode details of the artist and the title from the file name. It is assumed that the details are in the form of artist-title.mp3 - прояснение и представление намерений
+    private Track decodeDetails(File file)
+    {
+
+        String artist = "unknown";
+        String title = "unknown";
+        String filename = file.getPath();
+        
+
+        String details = file.getName();
+        String[] parts = details.split("-");
+        
+        if(parts.length == 2) {
+            artist = parts[0];
+            String titlePart = parts[1];
+            parts = titlePart.split("\\.");
+            if(parts.length >= 1) {
+                title = parts[0];
+            }
+            else {
+                title = titlePart;
+            }
+        }
+        return new Track(artist, title, filename);
+    }
+}
+
+
+
+
+
+
+
+
+
+
