@@ -42,7 +42,7 @@ public int checkEach(String key) {
 
 
 
-// ..копируем отдельный файл из старого архива в новый архив - с тем же именем
+// ..копируем отдельный файл из старого архива в новый архив - с тем же именем.
 private static void copyExistingFileToTheNewArchive(String pathZip, byte[] bytes, String zipEntryName, ZipOutputStream zipOutputStream) throws Exception{
 	ZipEntry zipEntry2nd = new ZipEntry(zipEntryName);
 	zipEntry2nd.setSize(bytes.length);
