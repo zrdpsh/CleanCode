@@ -226,7 +226,7 @@ public class TrackReader
         return tracks;
     }
 
-    // Try to decode details of the artist and the title from the file name. It is assumed that the details are in the form of artist-title.mp3 - прояснение и представление намерений
+    // Try to decode details of the artist and the title from the file name. It is assumed that the details are in the form of artist-title.mp3 - представление намерений
     private Track decodeDetails(File file)
     {
 
