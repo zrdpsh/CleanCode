@@ -3,7 +3,8 @@ import java.util.ArrayList;
 ```
 public class MusicOrganizer
 {
-    <del>// An ArrayList for storing music tracks.</del> - 7. Комментарий избыточен.
+```
+    // An ArrayList for storing music tracks. - 7. Комментарий избыточен.
     private ArrayList<Track> tracks;
     ~~// A player for the music tracks.~~ - 7. Комментарий избыточен.
     private MusicPlayer player;
