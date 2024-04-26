@@ -4,11 +4,11 @@ import java.util.ArrayList;
 public class MusicOrganizer
 {
 ```
-    // An ArrayList for storing music tracks. - 7. Комментарий избыточен.
+~~// An ArrayList for storing music tracks.~~ - 7. Комментарий избыточен.
 ```
     private ArrayList<Track> tracks;
 ```
-    ~~// A player for the music tracks.~~ - 7. Комментарий избыточен.
+~~// A player for the music tracks.~~ - 7. Комментарий избыточен.
 ```
     private MusicPlayer player;
 ```
