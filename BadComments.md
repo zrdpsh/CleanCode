@@ -5,17 +5,17 @@ public class MusicOrganizer
 {
 ```
     // An ArrayList for storing music tracks. - 7. Комментарий избыточен.
-    ```
+```
     private ArrayList<Track> tracks;
-    ```
+```
     ~~// A player for the music tracks.~~ - 7. Комментарий избыточен.
-    ```
+```
     private MusicPlayer player;
-    ```
+```
     // A reader that can read music files and load them as tracks.
-    ```
+```
     private TrackReader reader;
-    ```
+```
 
 ```
 public MusicOrganizer()
