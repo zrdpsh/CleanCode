@@ -37,12 +37,12 @@ public MusicOrganizer()
 ~~* Add a track file to the collection.
  */~~ - 7. Комментарий избыточен.
 
-     
+```   
 public void addFile(String filename)
 {
     tracks.add(new Track(filename));
 }
-
+```
 
 
 
@@ -50,13 +50,13 @@ public void addFile(String filename)
 ~~/**~~
 ~~* Add a track to the collection.
  */~~ - 12. Можно использовать имя функции
-
+```
 ~~public void addTrack(Track track)~~ 
 public void addTrackToPlaylist(Track track)
 {
     tracks.add(track);
 }
-
+```
 
 
 
@@ -64,7 +64,7 @@ public void addTrackToPlaylist(Track track)
 ~~/**~~
 ~~* Play a track in the collection.
  */~~ - 7. Комментарий избыточен.
-
+```
 public void playTrack(int index)
 {
     if(indexIsValid(index)) {
@@ -73,7 +73,7 @@ public void playTrack(int index)
         System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
     }
 }
-
+```
 
 
 
@@ -81,12 +81,12 @@ public void playTrack(int index)
 ~~/**~~
 ~~* Return the number of tracks in the collection.
  */~~ - 7. Комментарий избыточен.
-
+```
 public int getNumberOfTracks()
 {
     return tracks.size();
 }
-
+```
 
 
 
@@ -95,14 +95,14 @@ public int getNumberOfTracks()
 ~~/**~~
 ~~* List a track from the collection.
  */~~ - 7. Комментарий избыточен.
- 
+``` 
 public void listTrack(int index)
 {
     System.out.print("Track " + index + ": ");
     Track track = tracks.get(index);
     System.out.println(track.getDetails());
 }
-
+```
 
 
 
@@ -110,7 +110,7 @@ public void listTrack(int index)
 ~/**
 ~~* Show a list of all the tracks in the collection.
  */~~ - 7. Комментарий избыточен.
- 
+``` 
 public void listAllTracks()
 {
     System.out.println("Track listing: ");
@@ -120,7 +120,7 @@ public void listAllTracks()
     }
     System.out.println();
 }
-
+```
 
 
 
@@ -128,7 +128,7 @@ public void listAllTracks()
 ~~/**~~
 ~~* List all tracks by the given artist.
  */~~ - 7. Комментарий избыточен.
-
+```
 public void listByArtist(String artist)
 {
     for(Track track : tracks) {
@@ -137,7 +137,7 @@ public void listByArtist(String artist)
         }
     }
 }
- 
+``` 
 
 
 
@@ -145,14 +145,14 @@ public void listByArtist(String artist)
 ~~/**~~
 ~~* Remove a track from the collection.
  */~~ - 7. Комментарий избыточен.
-
+```
 public void removeTrack(int index)
 {
     if(indexValid(index)) {
         tracks.remove(index);
     }
 }
-
+```
 
 
 
@@ -160,14 +160,14 @@ public void removeTrack(int index)
 ~~/**~~
 ~~* Play the first track in the collection, if there is one.
  */~~ - 7. Комментарий избыточен.
- 
+``` 
 public void playFirst()
 {
     if(tracks.size() > 0) {
         player.startPlaying(tracks.get(0).getFilename());
     }
 }
-
+```
 
 
 
@@ -176,12 +176,12 @@ public void playFirst()
 ~~/**~~
 ~~* Stop the player.
  */~~ - 7. Комментарий избыточен.
- 
+``` 
 public void stopPlaying()
 {
     player.stop();
 }
-
+```
 
 
 
@@ -191,11 +191,13 @@ public void stopPlaying()
 ~~* Determine whether the given index is valid for the collection.~~
 ~~* Print an error message if it is not.~~
 ~~*/~~- - 12. Можно использовать имя функции
-
+```
 private boolean indexIsValid(int index)
 {
+```
 ~~// The return value.~~
 ~~// Set according to whether the index is valid or not.~~ - 7. Комментарий избыточен.
+```
     boolean valid;
     
     if(index < 0) {
@@ -211,20 +213,33 @@ private boolean indexIsValid(int index)
     }
     return valid;
 }
+```
 
 
 
 
-
-
+```
 // Read complete folder from the disk - прояснение
 private void readLibrary(String folderName)
 {
     ArrayList<Track> tempTracks = reader.readTracks(folderName, ".mp3");
-
+```
 ~~// Put all thetracks into the organizer.~~ - 7. Комментарий избыточен.
+```
     for(Track track : tempTracks) {
         addTrack(track);
     }
 }
 }
+```
+
+
+
+
+
+
+
+
+
+
+
