@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-
+```
 public class MusicOrganizer
 {
     ~~// An ArrayList for storing music tracks.~~ - 7. Комментарий избыточен.
@@ -9,7 +9,7 @@ public class MusicOrganizer
     private MusicPlayer player;
     // A reader that can read music files and load them as tracks.
     private TrackReader reader;
-
+```
 
 public MusicOrganizer()
 {
