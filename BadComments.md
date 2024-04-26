@@ -11,9 +11,9 @@ public class MusicOrganizer
 ~~// A player for the music tracks.~~ - 7. Комментарий избыточен.
 ```
     private MusicPlayer player;
-```
+
     // A reader that can read music files and load them as tracks.
-```
+
     private TrackReader reader;
 ```
 
