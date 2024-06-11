@@ -9,7 +9,6 @@ Font helvetica = new Font("Helvetica-bold-italic", Font.ITALIC, 20);
 
 
 
-
 private static void drawStringCustom(Graphics2D g, String stringToPrint, int x, int y) { // rest }
 private static void drawStringCustom(Graphics2D screenGraphics, String toPrint, int xCoord, int yCoord) { // rest }
 
