@@ -10,6 +10,7 @@ public class CarInsurancePolicy {
         residentCity = city;
     }
 
+
     public CarInsurancePolicy(int num, int payments) {
         policyNumber = num;
         numPayments = payments;
