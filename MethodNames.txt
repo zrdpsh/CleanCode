@@ -10,6 +10,7 @@ public void attackCreature(Creature enemy, int distance) {
   }
 }
 
+
 // method call will look like:
 // newAlpaca.attackCreature(newCreature, 7);
 
