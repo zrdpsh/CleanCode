@@ -29,7 +29,6 @@ public void tameAlpaca(Alpaca newAlpaca) {
 
 
 
-
 public void attack(Creature enemy, int distance, int useWeapon, int boostAttack) { //attack with special force
 	// ..code
 } //attack method
